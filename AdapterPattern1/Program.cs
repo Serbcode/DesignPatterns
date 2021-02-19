@@ -2,7 +2,6 @@
 
 namespace AdapterPattern1
 {
-
     public interface ITarget
     {
         string GetRequest();
@@ -43,7 +42,7 @@ namespace AdapterPattern1
             ITarget target = new Adapter(adaptee);
 
             // user code
-            Console.WriteLine(target.GetRequest());
+            Console.WriteLine(target.GetRequest());            
         }
     }
 }
