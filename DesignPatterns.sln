@@ -35,8 +35,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonPattern2", "Single
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonPattern3", "SingletonPattern3\SingletonPattern3.csproj", "{997FC6C7-479B-434A-9082-E2C1CAC77EAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern3", "SingletonPattern3\SingletonPattern3.csproj", "{997FC6C7-479B-434A-9082-E2C1CAC77EAE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
