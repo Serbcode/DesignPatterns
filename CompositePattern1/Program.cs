@@ -7,16 +7,16 @@ namespace CompositePattern1
     {
         static void Main(string[] args)
         {
-            Hardware hdd = new Hardware("HDD", 120.4f);
-            Hardware RAM = new Hardware("DIMM DDR", 322f);
+            Hardware hdd = new Hardware("HDD", 120f);
+            Hardware RAM = new Hardware("DIMM DDR", 300f);
 
             HardwareBox branch1 = new HardwareBox("Termaltake 11 Ryzen", 100f);
             branch1.Add(hdd);
             branch1.Add(RAM);
 
-            HardwareBox branch2 = new HardwareBox("CPU, Motherboard, Cooler BOX", 1390.0f);
-            Hardware cpu = new Hardware("Intel core i3", 120.4f);
-            Hardware mom = new Hardware("Asus Rock III", 322f);
+            HardwareBox branch2 = new HardwareBox("CPU + Motherboard BOX", 0.0f);
+            branch2.Add(new Hardware("Intel core i3", 120f));
+            branch2.Add(new Hardware("Asus Rock III", 300f));
 
             branch1.Add(branch2);
             
