@@ -27,13 +27,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethodPattern3", "Fa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractVirtualExample", "AbstractVirtualExample\AbstractVirtualExample.csproj", "{B89D36CB-FA60-4129-AB14-B978D9C86C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethodPattern4", "FactoryMethodPattern4\FactoryMethodPattern4.csproj", "{8BFFE402-60CE-4A6C-B674-C2C10D52A8A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethodPattern4", "FactoryMethodPattern4\FactoryMethodPattern4.csproj", "{8BFFE402-60CE-4A6C-B674-C2C10D52A8A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern1", "SingletonPattern1\SingletonPattern1.csproj", "{B95EDB36-D38C-4C65-9C13-44A69323DE62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonPattern1", "SingletonPattern1\SingletonPattern1.csproj", "{B95EDB36-D38C-4C65-9C13-44A69323DE62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern2", "SingletonPattern2\SingletonPattern2.csproj", "{BC7612EA-D71D-4685-8396-31D25EABC1C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonPattern2", "SingletonPattern2\SingletonPattern2.csproj", "{BC7612EA-D71D-4685-8396-31D25EABC1C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern3", "SingletonPattern3\SingletonPattern3.csproj", "{997FC6C7-479B-434A-9082-E2C1CAC77EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonPattern3", "SingletonPattern3\SingletonPattern3.csproj", "{997FC6C7-479B-434A-9082-E2C1CAC77EAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgePattern1", "BridgePattern1\BridgePattern1.csproj", "{BB59292D-77FA-4ABA-9859-776397222816}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AggregationExample", "AggregationExample\AggregationExample.csproj", "{A38A7D7B-44CB-40BF-A2F5-F0FB1E9D825E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionExample", "CompositionExample\CompositionExample.csproj", "{764D32AB-F99A-46E8-8C18-53F09608B7A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +111,18 @@ Global
 		{997FC6C7-479B-434A-9082-E2C1CAC77EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{997FC6C7-479B-434A-9082-E2C1CAC77EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{997FC6C7-479B-434A-9082-E2C1CAC77EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB59292D-77FA-4ABA-9859-776397222816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB59292D-77FA-4ABA-9859-776397222816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB59292D-77FA-4ABA-9859-776397222816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB59292D-77FA-4ABA-9859-776397222816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38A7D7B-44CB-40BF-A2F5-F0FB1E9D825E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38A7D7B-44CB-40BF-A2F5-F0FB1E9D825E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38A7D7B-44CB-40BF-A2F5-F0FB1E9D825E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38A7D7B-44CB-40BF-A2F5-F0FB1E9D825E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764D32AB-F99A-46E8-8C18-53F09608B7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764D32AB-F99A-46E8-8C18-53F09608B7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764D32AB-F99A-46E8-8C18-53F09608B7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764D32AB-F99A-46E8-8C18-53F09608B7A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
