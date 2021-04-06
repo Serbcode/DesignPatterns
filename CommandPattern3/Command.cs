@@ -26,7 +26,7 @@ namespace CommandPattern3
 
         public override void Excecute()
         {
-            bashTerminal.
+            throw new NotImplementedException();
         }
 
         public override string Name()
