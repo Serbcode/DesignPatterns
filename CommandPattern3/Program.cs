@@ -15,7 +15,7 @@ namespace CommandPattern3
             Terminal terminal = new Terminal();
 
             // invoker
-            var Session = new Session(terminal);                        
+            var Session = new Session(terminal);
 
             string name = string.Empty;
             do
@@ -23,10 +23,11 @@ namespace CommandPattern3
                 string input = Console.ReadLine();
                 Command command = CommandFactory.CreateCommand(input.ToLower(), Session);
 
-                if (command == null) continue;
-                name = command.ToString();
+                if (command == null) continue;                
                 
-                Session.ExecuteCommand(command);               
+                Session.ExecuteCommand(command);
+
+                name = command.Name;
 
             } while (name != "exit");
 
