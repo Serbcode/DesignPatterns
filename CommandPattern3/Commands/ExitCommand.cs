@@ -2,6 +2,9 @@
 
 namespace CommandPattern3.Commands
 {
+    /// <summary>
+    /// Exit console
+    /// </summary>
     public class ExitCommand : Command
     {
         public ExitCommand(string name) : base(name) { }

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CommandPattern3.Commands
 {
+    /// <summary>
+    /// Show help string
+    /// </summary>
     public class HelpCommand : Command
     {
         public HelpCommand(string name) : base(name)
@@ -12,7 +15,7 @@ namespace CommandPattern3.Commands
 
         public override string Execute()
         {
-            return "Input command: [help, history, redo, undo, rm, status, uptime, exit]";
+            return "Input command: [help, history, undo, rm, status, uptime, exit]";
         }
     }
 }

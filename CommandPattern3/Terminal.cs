@@ -8,13 +8,13 @@ namespace CommandPattern3
     /// <summary>
     /// Reciever, who recive commands and do some job
     /// </summary>
-    public class BashTerminal : IDisposable
+    public class Terminal : IDisposable
     {
         private readonly Stack<Command> stack;        
 
         public readonly Stopwatch Uptime;        
 
-        public BashTerminal()
+        public Terminal()
         {
             Uptime = new Stopwatch();
             Uptime.Start();
@@ -22,10 +22,11 @@ namespace CommandPattern3
             stack = new Stack<Command>();            
         }
 
-        public Command GetCommand()
+        public Command PopCommand()
         {
             try
             {
+                // stack could be empty
                 return stack.Pop();
             }
             catch (InvalidOperationException e)
@@ -35,13 +36,13 @@ namespace CommandPattern3
             }                        
         }
 
-        public void PutCommand(Command cmd)
+        public void PushCommand(Command cmd)
         {
             if (!(cmd is NotFoundCommand))
                 stack.Push(cmd);
         }
 
-        public string GetQueue()
+        public string GetCommands()
         {
             return string.Join(" -> ", stack);
         }

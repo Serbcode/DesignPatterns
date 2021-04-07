@@ -9,15 +9,15 @@ namespace CommandPattern3.Commands
     /// </summary>
     public abstract class Command 
     {
-        protected readonly BashSession session;
-        protected readonly string Name;
+        protected readonly Session session;
+        public readonly string Name;
 
         public Command(string name)
         {
             this.Name = name;
         }
 
-        public Command(string name, BashSession bashSession)
+        public Command(string name, Session bashSession)
         {
             this.Name = name ?? throw new ArgumentNullException(nameof(name));
             this.session = bashSession;

@@ -4,15 +4,18 @@ using CommandPattern3.Commands;
 
 namespace CommandPattern3
 {
+    /// <summary>
+    /// Design Patterns - Command Pattern Example
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
             // receiver
-            BashTerminal terminal = new BashTerminal();
+            Terminal terminal = new Terminal();
 
             // invoker
-            var Session = new BashSession(terminal);                        
+            var Session = new Session(terminal);                        
 
             string name = string.Empty;
             do

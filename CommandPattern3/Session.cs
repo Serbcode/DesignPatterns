@@ -7,24 +7,22 @@ namespace CommandPattern3
     /// <summary>
     /// Invoker class
     /// </summary>
-    public class BashSession
+    public class Session
     {
         protected readonly List<string> history = new List<string>();
 
-        public BashSession(BashTerminal terminal)
+        public Session(Terminal terminal)
         {
             Terminal = terminal;
         }
 
-        public BashTerminal Terminal { get; }
+        public Terminal Terminal { get; }
 
         public void ExecuteCommand(Command cmd)
         {
             Console.WriteLine(cmd.Execute());
-            history.Add(cmd.ToString());
-
-            if (cmd is UndoCommand) Terminal.GetCommand();
-            else Terminal.PutCommand(cmd);
+            history.Add(cmd.Name);
+            Terminal.PushCommand(cmd);
         }
 
         public string GetHistory()

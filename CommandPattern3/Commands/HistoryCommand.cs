@@ -2,9 +2,12 @@
 
 namespace CommandPattern3.Commands
 {
+    /// <summary>
+    /// Show all commands entered.
+    /// </summary>
     public class HistoryCommand : Command
     {
-        public HistoryCommand(string name, BashSession bashSession) : base(name, bashSession)
+        public HistoryCommand(string name, Session bashSession) : base(name, bashSession)
         {
         }
 

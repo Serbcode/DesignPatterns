@@ -5,15 +5,13 @@ namespace CommandPattern3
 {
     public static class CommandFactory
     {
-        public static Command CreateCommand(string name, BashSession session)
+        public static Command CreateCommand(string name, Session session)
         {
             switch (name)
             {
                 case "history": return new HistoryCommand(name, session);
 
                 case "undo": return new UndoCommand(name, session);
-
-                case "redo": return new RedoCommand(name);
 
                 case "exit": return new ExitCommand(name);
 
