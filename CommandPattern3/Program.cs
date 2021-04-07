@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CommandPattern3.Commands;
 
 namespace CommandPattern3
 {
@@ -7,33 +8,24 @@ namespace CommandPattern3
     {
         static void Main(string[] args)
         {
-            // invoker
-            var BashSession = new BashSession();
-            
             // receiver
             BashTerminal terminal = new BashTerminal();
 
-            // concrete commands
-            Command cmd = CommandFactory.CreateCommand("redo", terminal);
-            BashSession.ExecuteCommand(cmd);
+            // invoker
+            var Session = new BashSession(terminal);                        
 
-            cmd = CommandFactory.CreateCommand("rm", terminal);
-            BashSession.ExecuteCommand(cmd);
+            string name = string.Empty;
+            do
+            {
+                string input = Console.ReadLine();
+                Command command = CommandFactory.CreateCommand(input.ToLower(), Session);
 
-            cmd = CommandFactory.CreateCommand("history", terminal);
-            BashSession.ExecuteCommand(cmd);
+                if (command == null) continue;
+                name = command.ToString();
+                
+                Session.ExecuteCommand(command);               
 
-
-            //string cmdName;
-            //do
-            //{
-            //    string cmd = Console.ReadLine();
-            //    Command command = CommandFactory.CreateCommand(cmd);
-            //    BashSession.ExecuteCommand(command);
-
-            //    cmdName = command.Name();
-
-            //} while (cmdName != "exit");            
+            } while (name != "exit");
 
         }
     }
