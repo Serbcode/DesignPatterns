@@ -84,15 +84,17 @@ namespace DecoratorPattern1
     {
         static void Main(string[] args)
         {
+            // то, что у нас было.
             Client client = new Client();
             var fs = new FileDataSource("Test.txt");
             client.ClientCode(fs);
 
-            // а теперь декораторы.
+            // а теперь декораторы. добавленная функциональность.
             // декораторы могут обертывать декораторы ))
             EncryptionDecorator ed = new EncryptionDecorator(fs);
             CompressionDecorator cd = new CompressionDecorator(ed);
-            // клиентский код работает также с ними.
+            
+            // клиентский код не меняется и работает также с ними.
             client.ClientCode(cd);
         }
     }
