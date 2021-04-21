@@ -73,9 +73,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyPattern1", "ProxyPatte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinkModeling", "DrinkModeling\DrinkModeling.csproj", "{B6CE5C14-7E67-47BA-B941-A6086DA96A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates1", "Delegates1\Delegates1.csproj", "{0CD5FCDA-9332-4BBE-91EC-B51FF9A32B0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates1", "Delegates1\Delegates1.csproj", "{0CD5FCDA-9332-4BBE-91EC-B51FF9A32B0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesFuncAction", "DelegatesFuncAction\DelegatesFuncAction.csproj", "{4AD2E8CB-1FBD-4768-83B4-3096FC1DC2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesFuncAction", "DelegatesFuncAction\DelegatesFuncAction.csproj", "{4AD2E8CB-1FBD-4768-83B4-3096FC1DC2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesAction", "DelegatesAction\DelegatesAction.csproj", "{4EE6203E-4C1B-4CE1-BDF2-7FE12D5326AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -230,6 +232,10 @@ Global
 		{4AD2E8CB-1FBD-4768-83B4-3096FC1DC2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AD2E8CB-1FBD-4768-83B4-3096FC1DC2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AD2E8CB-1FBD-4768-83B4-3096FC1DC2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE6203E-4C1B-4CE1-BDF2-7FE12D5326AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE6203E-4C1B-4CE1-BDF2-7FE12D5326AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE6203E-4C1B-4CE1-BDF2-7FE12D5326AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE6203E-4C1B-4CE1-BDF2-7FE12D5326AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
