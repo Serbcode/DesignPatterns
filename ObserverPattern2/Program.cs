@@ -9,7 +9,7 @@ namespace ObserverPattern2
     }
 
     class Program
-    {
+    {        
         public static EuroCurrency[] Week = new EuroCurrency[]
             {
                 new EuroCurrency(92.29m, Convert.ToDateTime("22.04.2021")),
@@ -35,7 +35,8 @@ namespace ObserverPattern2
 
             foreach (var currency in Week)
             {
-                System.Threading.Thread.Sleep(1500);                
+                System.Threading.Thread.Sleep(1500);
+
 
                 if (currency == null)
                     observer1.OnError(new CurrencyUnknownException());
@@ -43,7 +44,6 @@ namespace ObserverPattern2
                     observer1.OnNext(currency);
             }
             observer1.OnCompleted();
-
         }
     }
 }
