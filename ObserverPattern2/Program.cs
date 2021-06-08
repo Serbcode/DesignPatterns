@@ -3,7 +3,7 @@
 namespace ObserverPattern2
 {
     class Program
-    {
+    {        
         public static EuroCurrency[] Week = new EuroCurrency[]
             {
                 new EuroCurrency(92.29m, Convert.ToDateTime("22.04.2021")),
@@ -18,13 +18,14 @@ namespace ObserverPattern2
 
         static void Main(string[] args)
         {
-
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            // provider
             EuroCurrencyStock stock = new EuroCurrencyStock();
-            EuroObserver observer1 = new EuroObserver();
-            
-            stock.Subscribe(observer1);
 
-            bool start = true;
+            // subscribers
+            EuroObserver observer1 = new EuroObserver();
+
+            stock.Subscribe(observer1);
 
             foreach (var currency in Week)
             {
@@ -32,20 +33,11 @@ namespace ObserverPattern2
 
                 if (currency != null)
                 {
-                    Temperature tempData = new Temperature(temp.Value, DateTime.Now);
-                    foreach (var observer in observers)
-                        observer.OnNext(tempData);
-                    previous = temp;
-                    if (start) start = false;
-
+                    observer1.OnNext(currency);
                 }
                 else
                 {
-                    foreach (var observer in stock.ToArray())
-                        if (observer != null) observer.OnCompleted();
-
-                    observers.Clear();
-                    break;
+                    observer1.OnCompleted();
                 }
             }
         }
