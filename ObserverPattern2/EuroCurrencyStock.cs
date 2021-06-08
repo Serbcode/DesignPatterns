@@ -5,7 +5,7 @@ namespace ObserverPattern2
 {
     public class EuroCurrencyStock : IObservable<EuroCurrency>
     {
-        private List<IObserver<EuroCurrency>> observers;
+        private readonly List<IObserver<EuroCurrency>> observers;
 
         public EuroCurrencyStock()
         {

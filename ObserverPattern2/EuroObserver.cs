@@ -14,7 +14,7 @@ namespace ObserverPattern2
 
         public void OnError(Exception error)
         {
-            // do nothing
+            Console.WriteLine(error.Message);
         }
 
         public void OnNext(EuroCurrency value)
@@ -26,8 +26,7 @@ namespace ObserverPattern2
             }
             else 
             {                
-                Console.WriteLine("\tEuro change: {0}₽ in {1:g}. Price is: {2}₽", value.Price - lastValue.Price,
-                    value.Date.ToUniversalTime() - lastValue.Date.ToUniversalTime(), value);
+                Console.WriteLine($"Euro change: {value.Price - lastValue.Price}₽ in {value.Date - lastValue.Date}. Price is: {value.Price}₽");
                 lastValue = value;
             }
         }
