@@ -93,11 +93,10 @@ namespace StrategyPattern1
         }
 
         private static void Importer_DataParsed(object sender, DataParsedEventArgs e)
-        {
-            wline("sender: " + sender.GetType().Name);
+        {            
             if (e.Exception == null)
             {
-                wline(e.TimeReached.ToString("HH:mm ss"));
+                wline($"Data was parsed by {sender.GetType().Name}, finished at {e.TimeReached.ToString("HH:mm ss")}");
             }
         }
     }
