@@ -64,13 +64,13 @@ namespace StrategyPattern1
         public DateTime TimeReached { get; set; }
     }
 
-    public delegate void writeline(string str);
+    //public delegate void writeline(string str);
     
 
     class Program
     {
         public readonly Action line = () => Console.WriteLine();
-        public static writeline wline = (string s) => Console.WriteLine(s);
+        public static Action<string> wline = (string s) => Console.WriteLine(s);
 
         static void Main(string[] args)
         {            
