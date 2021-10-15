@@ -10,7 +10,7 @@ namespace AbstractFactoryPattern2
 
     public class WinButton : IButton
     {
-        public void Paint() => Console.WriteLine("windows button");        
+        public void Paint() => Console.WriteLine("windows button");
     }
 
     public class MacButton : IButton
@@ -69,6 +69,9 @@ namespace AbstractFactoryPattern2
     }
     #endregion
 
+    /// <summary>
+    /// Application code never changed
+    /// </summary>
     public class Application
     {
         private readonly IGuiFactory factory;
@@ -88,26 +91,42 @@ namespace AbstractFactoryPattern2
 
             checkbox = factory.CreateCheckbox();
             checkbox.Paint();
-        }        
+        }
+    }
+
+
+    public class Driver
+    {
+        private readonly Func<ConsoleKeyInfo> userInput;
+
+        public Driver(Func<ConsoleKeyInfo> UserInput)
+        {
+            this.userInput = UserInput;
+            InitFactory();
+        }
+
+        public IGuiFactory Factory { get; private set; }
+
+        private void InitFactory()
+        {
+            Console.WriteLine("Input 'w' for Windows render, 'm' - for Mac render");
+            ConsoleKeyInfo? key = this.userInput?.Invoke();
+            if (!key.HasValue) throw new NotImplementedException();
+            Factory = key.Value.KeyChar switch
+            {
+                'w' => new WinFactory(),
+                'm' => new MacFactory(),
+                _ => throw new NotImplementedException()
+            };
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Input 'w' for Windows render, 'm' - for Mac render");
-
-            char key = Console.ReadKey().KeyChar;
-
-            IGuiFactory factory = key switch
-            {
-                'w' => new WinFactory(),
-                'm' => new MacFactory(),
-                _ => throw new NotImplementedException()
-            };
-
-            Application app = new Application(factory);
+            Driver driver = new Driver(Console.ReadKey);
+            Application app = new Application(driver.Factory);
             app.CreateUI();
         }
     }
