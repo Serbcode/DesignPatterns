@@ -97,7 +97,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates0", "Delegates0\De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events1", "Events1\Events1.csproj", "{0E71C603-8047-4984-88CE-5C719443C3BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsDelegates", "EventsDelegates\EventsDelegates.csproj", "{5DBF5B10-4B38-4692-87A9-CDEEA7216E25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsDelegates", "EventsDelegates\EventsDelegates.csproj", "{5DBF5B10-4B38-4692-87A9-CDEEA7216E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorPattern1", "VisitorPattern1\VisitorPattern1.csproj", "{F763DDCD-D8B4-43F9-B4BA-8281892C8640}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -296,6 +298,10 @@ Global
 		{5DBF5B10-4B38-4692-87A9-CDEEA7216E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DBF5B10-4B38-4692-87A9-CDEEA7216E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DBF5B10-4B38-4692-87A9-CDEEA7216E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

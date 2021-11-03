@@ -2,12 +2,12 @@
 
 namespace StatePattern2
 {
-    public interface FanState
+    public interface IFanState
     {
         void Pull(CeilingFan fan);
     }
 
-    public class Off : FanState
+    public class Off : IFanState
     {
         public void Pull(CeilingFan fan)
         {
@@ -16,7 +16,7 @@ namespace StatePattern2
         }
     }
 
-    public class Low : FanState
+    public class Low : IFanState
     {
         public void Pull(CeilingFan fan)
         {
@@ -25,7 +25,7 @@ namespace StatePattern2
         }
     }
 
-    public class Medium : FanState
+    public class Medium : IFanState
     {
         public void Pull(CeilingFan fan)
         {
@@ -34,7 +34,7 @@ namespace StatePattern2
         }
     }
 
-    public class High : FanState
+    public class High : IFanState
     {
         public void Pull(CeilingFan fan)
         {
@@ -45,7 +45,7 @@ namespace StatePattern2
 
     public class CeilingFan
     {
-        private FanState CurrentState;
+        private IFanState CurrentState;
 
         public void PullChain()
         {
@@ -57,7 +57,7 @@ namespace StatePattern2
             CurrentState = new Off();
         }
 
-        public void SetState(FanState s)
+        public void SetState(IFanState s)
         {
             CurrentState = s;
         }        
