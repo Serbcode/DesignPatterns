@@ -99,7 +99,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events1", "Events1\Events1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsDelegates", "EventsDelegates\EventsDelegates.csproj", "{5DBF5B10-4B38-4692-87A9-CDEEA7216E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorPattern1", "VisitorPattern1\VisitorPattern1.csproj", "{F763DDCD-D8B4-43F9-B4BA-8281892C8640}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorPattern1", "VisitorPattern1\VisitorPattern1.csproj", "{F763DDCD-D8B4-43F9-B4BA-8281892C8640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorPattern2", "VisitorPattern2\VisitorPattern2.csproj", "{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -302,6 +304,10 @@ Global
 		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F763DDCD-D8B4-43F9-B4BA-8281892C8640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
