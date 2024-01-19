@@ -28,8 +28,9 @@ public class Program
         var type = Assembly
             .GetExecutingAssembly()
             .GetTypes()
-            .FirstOrDefault(t => t.IsAssignableFrom(t) && string.Equals(t.Name, $"{parserKey}Parser", StringComparison.InvariantCultureIgnoreCase)) ??
-                 throw new ArgumentException($"Parser for {parserKey} not found", nameof(parserKey));
+            .FirstOrDefault(t => t.IsAssignableFrom(t) && string.Equals(t.Name, $"{parserKey}Parser",
+                StringComparison.InvariantCultureIgnoreCase)) ??
+                throw new ArgumentException($"Parser for {parserKey} not found", nameof(parserKey));
 
         return (T)Activator.CreateInstance(type);
     }
