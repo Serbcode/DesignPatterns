@@ -103,6 +103,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorPattern1", "VisitorP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorPattern2", "VisitorPattern2\VisitorPattern2.csproj", "{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern2", "StrategyPattern2\StrategyPattern2.csproj", "{A28CE3BF-A563-49D6-AF39-7D9DB4C339A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -308,6 +310,10 @@ Global
 		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D9A00C7-EB1D-4EE7-969A-6AEAC960FA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28CE3BF-A563-49D6-AF39-7D9DB4C339A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28CE3BF-A563-49D6-AF39-7D9DB4C339A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28CE3BF-A563-49D6-AF39-7D9DB4C339A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28CE3BF-A563-49D6-AF39-7D9DB4C339A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
