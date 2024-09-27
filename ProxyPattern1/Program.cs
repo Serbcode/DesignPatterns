@@ -2,7 +2,6 @@
 
 namespace ProxyPattern1
 {
-
     interface ISubject
     {
         void Request();
@@ -64,8 +63,6 @@ namespace ProxyPattern1
     {
         static void Main(string[] args)
         {
-            
-
             Console.WriteLine("Client: Executing the client code with a real subject:");
             RealSubject realSubject = new RealSubject();
             Client.ClientCode(realSubject);

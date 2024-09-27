@@ -111,6 +111,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalObjectsPattern", "O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern4", "SingletonPattern4\SingletonPattern4.csproj", "{D954155F-999D-4AF7-A8EF-B3464E048515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyPatternLazy", "ProxyPatternLazy\ProxyPatternLazy.csproj", "{E7E4405A-C445-4D81-952C-0AD49C798A72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyPattern2", "ProxyPattern2\ProxyPattern2.csproj", "{C5487BCE-E10E-43CC-BE49-E56DD81A5FA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -332,6 +336,14 @@ Global
 		{D954155F-999D-4AF7-A8EF-B3464E048515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D954155F-999D-4AF7-A8EF-B3464E048515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D954155F-999D-4AF7-A8EF-B3464E048515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7E4405A-C445-4D81-952C-0AD49C798A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E4405A-C445-4D81-952C-0AD49C798A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E4405A-C445-4D81-952C-0AD49C798A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E4405A-C445-4D81-952C-0AD49C798A72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5487BCE-E10E-43CC-BE49-E56DD81A5FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5487BCE-E10E-43CC-BE49-E56DD81A5FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5487BCE-E10E-43CC-BE49-E56DD81A5FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5487BCE-E10E-43CC-BE49-E56DD81A5FA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
