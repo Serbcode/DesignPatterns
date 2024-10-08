@@ -9,15 +9,23 @@ var CleanArchitecture = Book.Create("Clean Architecture");
 
 string GetLabel(Author author) =>
     author.LastName
-        .Map(LastName => $"{author.FirstName} {LastName}")
-        .Reduce(author.FirstName);
+        .Apply(LastName => $"{author.FirstName} {LastName}")
+        .GetValueOrDefault(author.FirstName);
 
 string GetBookLabel(Book book) =>
     book.Author
-        .Map(GetLabel)
-        .Map(author => $"{book.Title} - {author}")
-        .Reduce(book.Title);
+        .Apply(GetLabel)
+        .Apply(author => $"{book.Title} - {author}")
+        .GetValueOrDefault(book.Title);
 
 Console.WriteLine(GetBookLabel(CleanCodeBook));
 Console.WriteLine(GetBookLabel(RefactoringBook));
 Console.WriteLine(GetBookLabel(CleanArchitecture));
+
+
+Option<string> CompanyName = Option<string>.Some("Microsoft");
+
+Console.WriteLine(CompanyName
+    .Apply(str => str.ToUpper())
+    .GetValueOrDefault(string.Empty)
+);

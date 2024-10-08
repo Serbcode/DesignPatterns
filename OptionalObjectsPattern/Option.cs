@@ -10,8 +10,15 @@ public class Option<T> where T : class
 
     public bool HasValue => content is not null;
 
-    public Option<TResult> Map<TResult>(Func<T, TResult> map) where TResult : class
+    /// <summary>
+    /// Additional method for transforming the value if it is presented
+    /// </summary>
+    public Option<TResult> Apply<TResult>(Func<T, TResult> map) where TResult : class
         => HasValue ? Option<TResult>.Some(map(content!)) : Option<TResult>.None();
 
-    public T Reduce(T WhenNone) => HasValue ? content! : WhenNone;
+    /// <summary>
+    /// Additional method where client code can specify what to return 
+    /// if content was not presented
+    /// </summary>
+    public T GetValueOrDefault(T WhenNone) => HasValue ? content! : WhenNone;
 }
