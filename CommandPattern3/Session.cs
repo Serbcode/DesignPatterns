@@ -9,7 +9,7 @@ namespace CommandPattern3
     /// </summary>
     public class Session
     {
-        protected readonly List<string> history = new List<string>();
+        protected readonly List<string> history = new();
 
         public Session(Terminal terminal)
         {

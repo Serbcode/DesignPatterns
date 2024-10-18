@@ -23,8 +23,6 @@ namespace CommandPattern3
                 string input = Console.ReadLine();
                 Command command = CommandFactory.CreateCommand(input.ToLower(), Session);
 
-                if (command == null) continue;                
-                
                 Session.ExecuteCommand(command);
 
                 name = command.Name;

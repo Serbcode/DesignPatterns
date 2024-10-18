@@ -6,20 +6,20 @@ using CommandPattern3.Commands;
 namespace CommandPattern3
 {
     /// <summary>
-    /// Reciever, who recive commands and do some job
+    /// Receiver, who receives commands and do some job
     /// </summary>
     public class Terminal : IDisposable
     {
-        private readonly Stack<Command> stack;        
+        private readonly Stack<Command> stack;
 
-        public readonly Stopwatch Uptime;        
+        public readonly Stopwatch Uptime;
 
         public Terminal()
         {
             Uptime = new Stopwatch();
             Uptime.Start();
-            
-            stack = new Stack<Command>();            
+
+            stack = new Stack<Command>();
         }
 
         public Command PopCommand()
@@ -33,7 +33,7 @@ namespace CommandPattern3
             {
                 Console.WriteLine(e.Message);
                 return null;
-            }                        
+            }
         }
 
         public void PushCommand(Command cmd)
@@ -49,7 +49,7 @@ namespace CommandPattern3
 
         public void Dispose()
         {
-            Uptime.Stop();                        
+            Uptime.Stop();
         }
     }
 }
