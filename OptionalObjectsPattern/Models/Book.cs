@@ -1,4 +1,4 @@
-using OptionalObjectsPattern.Models;
+namespace OptionalObjectsPattern.Models;
 
 public class Book
 {

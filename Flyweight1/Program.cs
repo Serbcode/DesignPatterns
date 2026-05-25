@@ -5,28 +5,15 @@ using System.Linq;
 
 namespace Flyweight1
 {
+    public record Car(string Model,
+                      string Company,
+                      string Color,
+                      string? Owner = null,
+                      string? Number = null);
 
-    public class Car
+    public class Flyweight(Car car)
     {
-        public string Owner { get; set; }
-
-        public string Number { get; set; }
-
-        public string Company { get; set; }
-
-        public string Model { get; set; }
-
-        public string Color { get; set; }
-    }
-
-    public class Flyweight
-    {
-        private Car sharedState;
-
-        public Flyweight(Car car)
-        {
-            this.sharedState = car;
-        }
+        private Car sharedState = car;
 
         public void Operation(Car uniqueState)
         {
@@ -55,11 +42,7 @@ namespace Flyweight1
         // Возвращает хеш строки Легковеса для данного состояния.
         public string GetKey(Car key)
         {
-            List<string> elements = new List<string>();
-
-            elements.Add(key.Model);
-            elements.Add(key.Color);
-            elements.Add(key.Company);
+            List<string> elements = [key.Model, key.Color, key.Company];
 
             if (key.Owner != null && key.Number != null)
             {
@@ -74,20 +57,20 @@ namespace Flyweight1
 
         // Возвращает существующий Легковес с заданным состоянием или создает
         // новый.
-        public Flyweight GetFlyweight(Car sharedState)
+        public Flyweight? GetFlyweight(Car sharedState)
         {
             string key = this.GetKey(sharedState);
 
-            if (flyweights.Where(t => t.Item2 == key).Count() == 0)
+            if (!flyweights.Any(t => t.Item2 == key))
             {
                 Console.WriteLine("FlyweightFactory: Can't find a flyweight, creating new one.");
-                this.flyweights.Add(new Tuple<Flyweight, string>(new Flyweight(sharedState), key));
+                flyweights.Add(new Tuple<Flyweight, string>(new Flyweight(sharedState), key));
             }
             else
             {
                 Console.WriteLine("FlyweightFactory: Reusing existing flyweight.");
             }
-            return this.flyweights.Where(t => t.Item2 == key).FirstOrDefault().Item1;
+            return flyweights.FirstOrDefault(t => t.Item2 == key)?.Item1;
         }
 
         public void ListFlyweights()
@@ -107,16 +90,11 @@ namespace Flyweight1
         {
             Console.WriteLine("\nClient: Adding a car to database.");
 
-            var flyweight = factory.GetFlyweight(new Car
-            {
-                Color = car.Color,
-                Model = car.Model,
-                Company = car.Company
-            });
+            var flyweight = factory.GetFlyweight(new Car(car.Model, car.Company, car.Color));
 
             // Клиентский код либо сохраняет, либо вычисляет внешнее состояние и
             // передает его методам легковеса.
-            flyweight.Operation(car);
+            flyweight?.Operation(car);
         }
 
         static void Main(string[] args)
@@ -124,31 +102,16 @@ namespace Flyweight1
             // Клиентский код обычно создает кучу предварительно заполненных
             // легковесов на этапе инициализации приложения.
             var factory = new FlyweightFactory(
-                new Car { Company = "Chevrolet", Model = "Camaro2018", Color = "pink" },
-                new Car { Company = "Mercedes Benz", Model = "C300", Color = "black" },
-                new Car { Company = "Mercedes Benz", Model = "C500", Color = "red" },
-                new Car { Company = "BMW", Model = "M5", Color = "red" },
-                new Car { Company = "BMW", Model = "X6", Color = "white" }
-            );
+                new Car("Chevrolet", "Camaro2018", "pink"),
+                new Car("Mercedes Benz", "C300", "black"),
+                new Car("Mercedes Benz", "C500", "red"),
+                new Car("BMW", "M5", "red"),
+                new Car("BMW", "X6", "white"));
             factory.ListFlyweights();
 
-            addCarToPoliceDatabase(factory, new Car
-            {
-                Number = "CL234IR",
-                Owner = "James Doe",
-                Company = "BMW",
-                Model = "M5",
-                Color = "red"
-            });
+            addCarToPoliceDatabase(factory, new Car("James Doe", "CL234IR", "BMW", "M5", "red"));
 
-            addCarToPoliceDatabase(factory, new Car
-            {
-                Number = "CL234IR",
-                Owner = "James Doe",
-                Company = "BMW",
-                Model = "X1",
-                Color = "red"
-            });
+            addCarToPoliceDatabase(factory, new Car("James Doe", "CL234IR", "BMW", "X1", "red"));
 
             factory.ListFlyweights();
         }

@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CommandPattern1.Commands
+﻿namespace CommandPattern1.Commands
 {
     /// <summary>
-    /// A concrete command
+    /// Modify command
     /// </summary>
     public class ModifyCommand : OrderCommand
     {
         public override void Execute(List<MenuItem> currentItems, MenuItem newItem)
         {
-            var item = currentItems.Where(x => x.Name == newItem.Name).First();
-            item.Price = newItem.Price;
-            item.Amount = newItem.Amount;
+            var item = currentItems.FirstOrDefault(i => i.Name == newItem.Name);
+            if (item is not null)
+            {
+                item.Price = newItem.Price;
+                item.Amount = newItem.Amount;
+            }
         }
     }
 }

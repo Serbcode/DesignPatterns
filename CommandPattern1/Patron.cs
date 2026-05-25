@@ -1,24 +1,23 @@
 ﻿using CommandPattern1.Commands;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommandPattern1
 {
     public class Patron
     {
-        private FastFoodOrder _order;
+        private readonly FastFoodOrder _order;
         private MenuItem _menuItem;
         private OrderCommand _orderCommand;
 
         public Patron()
         {
             _order = new FastFoodOrder();
+            _orderCommand = new NoopCommand();
+            _menuItem = new MenuItem("No item", 0, 0);
         }
 
-        public void SetCommand(int CommandOption)
+        public void SetCommand(string CommandOption)
         {
-            _orderCommand = new CommandFactory().GetCommand(CommandOption);
+            _orderCommand = CommandFactory.GetCommand(CommandOption);
         }
 
         public void SetMenuItem(MenuItem item)
@@ -37,21 +36,17 @@ namespace CommandPattern1
         }
     }
 
-    public class CommandFactory
+    public static class CommandFactory
     {
-        public OrderCommand GetCommand(int CommandOption)
+        public static OrderCommand GetCommand(string CommandOption)
         {
-            switch (CommandOption)
+            return CommandOption.ToLower() switch
             {
-                case 1:
-                    return new AddCommand();
-                case 2:
-                    return new ModifyCommand();
-                case 3:
-                    return new RemoveCommand();
-                default:
-                    return new AddCommand();
-            }
+                "add" => new AddCommand(),
+                "modify" => new ModifyCommand(),
+                "remove" => new RemoveCommand(),
+                _ => new NoopCommand(),
+            };
         }
     }
 }
