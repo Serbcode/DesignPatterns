@@ -57,15 +57,15 @@ namespace CommandPattern2
             Invoker invoker = new Invoker();
 
             // заказ в макдональдсе
-            var reciever = new Receiver();
+            var receiver = new Receiver();
 
             // создание конкретной операции над заказом (например добавление кофе)
-            Command command = new ConcreteCommand(reciever);
-                        
-            // пользователь добавляет (регистрирует) эту комманду
+            Command command = new ConcreteCommand(receiver);
+
+            // пользователь добавляет (регистрирует) эту команду
             invoker.StoreCommand(command);
 
-            // выполняет комманду
+            // выполняет команду
             invoker.ExecuteCommand();
         }
     }

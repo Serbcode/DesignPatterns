@@ -1,0 +1,67 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="AbstractFactory/AbstractFactoryPattern.csproj" />
+  <Project Path="AbstractFactoryPattern2/AbstractFactoryPattern2.csproj" />
+  <Project Path="AbstractVirtualExample/AbstractVirtualExample.csproj" />
+  <Project Path="AdapterPattern1/AdapterPattern1.csproj" />
+  <Project Path="AdapterPattern2/AdapterPattern2.csproj" />
+  <Project Path="AggregationExample/AggregationExample.csproj" />
+  <Project Path="BridgePattern1/BridgePattern1.csproj" />
+  <Project Path="Builder/BuilderPattern.csproj" />
+  <Project Path="BuilderPattern2/BuilderPattern2.csproj" />
+  <Project Path="BuilderPattern3/BuilderPattern3.csproj" />
+  <Project Path="BuilderPattern4/BuilderPattern4.csproj" />
+  <Project Path="CommandPattern1/CommandPattern1.csproj" />
+  <Project Path="CommandPattern2/CommandPattern2.csproj" />
+  <Project Path="CommandPattern3/CommandPattern3.csproj" />
+  <Project Path="CompositePattern1/CompositePattern1.csproj" />
+  <Project Path="CompositionExample/CompositionExample.csproj" />
+  <Project Path="CoR1/CoR1.csproj" />
+  <Project Path="CoR2/CoR2.csproj" />
+  <Project Path="CoR3/CoR3.csproj" />
+  <Project Path="DecoratorPattern1/DecoratorPattern1.csproj">
+    <Build Solution="Release|Any CPU" Project="false" />
+  </Project>
+  <Project Path="DecoratorPattern2/DecoratorPattern2.csproj" />
+  <Project Path="Delegates0/Delegates0.csproj" />
+  <Project Path="Delegates1/Delegates1.csproj" />
+  <Project Path="Delegates2/Delegates2.csproj" />
+  <Project Path="DelegatesAction/DelegatesAction.csproj" />
+  <Project Path="DelegatesFuncAction/DelegatesFuncAction.csproj" />
+  <Project Path="DrinkModeling/DrinkModeling.csproj" />
+  <Project Path="Events1/Events1.csproj" />
+  <Project Path="EventsDelegates/EventsDelegates.csproj" />
+  <Project Path="Facade1/Facade1.csproj" />
+  <Project Path="FactoryMethodPattern/FactoryMethodPattern.csproj" />
+  <Project Path="FactoryMethodPattern2/FactoryMethodPattern2.csproj" />
+  <Project Path="FactoryMethodPattern3/FactoryMethodPattern3.csproj" />
+  <Project Path="FactoryMethodPattern4/FactoryMethodPattern4.csproj" />
+  <Project Path="FactoryMethodPattern5/FactoryMethodPattern5.csproj" />
+  <Project Path="Flyweight1/Flyweight1.csproj" />
+  <Project Path="MediatorPattern1/MediatorPattern1.csproj" />
+  <Project Path="MementoPattern1/MementoPattern1.csproj" />
+  <Project Path="NullObjectPattern/NullObjectPattern.csproj" />
+  <Project Path="ObserverPattern1/ObserverPattern1.csproj" />
+  <Project Path="ObserverPattern2/ObserverPattern2.csproj" />
+  <Project Path="OptionalObjectsPattern/OptionalObjectsPattern.csproj" />
+  <Project Path="PrototypePattern/PrototypePattern.csproj" />
+  <Project Path="PrototypePattern2/PrototypePattern2.csproj" />
+  <Project Path="ProxyPattern1/ProxyPattern1.csproj" />
+  <Project Path="ProxyPattern2/ProxyPattern2.csproj" />
+  <Project Path="ProxyPatternLazy/ProxyPatternLazy.csproj" />
+  <Project Path="ResultPattern/ResultPattern.csproj" />
+  <Project Path="SingletonPattern1/SingletonPattern1.csproj" />
+  <Project Path="SingletonPattern2/SingletonPattern2.csproj" />
+  <Project Path="SingletonPattern3/SingletonPattern3.csproj" />
+  <Project Path="SingletonPattern4/SingletonPattern4.csproj" />
+  <Project Path="StatePattern1/StatePattern1.csproj" />
+  <Project Path="StatePattern2/StatePattern2.csproj" />
+  <Project Path="StrategyPattern1/StrategyPattern1.csproj" />
+  <Project Path="StrategyPattern2/StrategyPattern2.csproj" />
+  <Project Path="VisitorPattern1/VisitorPattern1.csproj" />
+  <Project Path="VisitorPattern2/VisitorPattern2.csproj" />
+</Solution>
