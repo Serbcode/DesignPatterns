@@ -5,7 +5,7 @@ namespace MementoPattern1
     public class Originator
     {
         // https://anthonygiretti.com/2021/05/01/c-make-your-delegates-asynchronous-from-synchronous-delegates/
-        public event EventHandler<StateChangedEventArgs> StateChanged;
+        public event EventHandler<StateChangedEventArgs>? StateChanged;
 
         private string _state;
         public Originator(string state)
@@ -35,7 +35,7 @@ namespace MementoPattern1
             originator.DoSomeWork("state after work");
         }
 
-        private static void Originator_StateChanged(object sender, StateChangedEventArgs e)
+        private static void Originator_StateChanged(object? sender, StateChangedEventArgs e)
         {
             write("Originator's state has been changed: " + e.State + " at " + e.Date.ToString("HH:mm"));
         }
@@ -43,8 +43,8 @@ namespace MementoPattern1
 
     public class StateChangedEventArgs : EventArgs
     {
-        public string State { get; set; }
-        public DateTime Date { get; set; }
+        public required string State { get; set; }
+        public required DateTime Date { get; set; }
     }
 
 }

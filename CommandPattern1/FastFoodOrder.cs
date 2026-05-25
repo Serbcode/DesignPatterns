@@ -13,19 +13,19 @@ namespace CommandPattern1
         public List<MenuItem> currentItems { get; set; }
         public FastFoodOrder()
         {
-            currentItems = new List<MenuItem>();
+            currentItems = [];
         }
 
         public void ExecuteCommand(OrderCommand command, MenuItem item)
         {
-            command.Execute(this.currentItems, item);
+            command.Execute(currentItems, item);
         }
 
         public void ShowCurrentItems()
         {
             foreach (var item in currentItems)
             {
-                item.Display();
+                Console.WriteLine(item);
             }
             Console.WriteLine("-----------------------");
         }

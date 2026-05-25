@@ -1,4 +1,6 @@
-﻿using OptionalObjectsPattern.Models;
+﻿using OptionalObjectsPattern;
+using OptionalObjectsPattern.Models;
+
 
 var BobMartin = Author.Create("Robert", "Martin");
 var MartinFowler = Author.Create("Martin");

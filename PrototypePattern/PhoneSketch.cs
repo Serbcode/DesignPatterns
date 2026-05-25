@@ -8,33 +8,26 @@ using System.Text;
 namespace PrototypePattern
 {
     [Serializable]
-    public class OperationSystem
+    public record OperationSystem(string Name, int Version)
     {
-        public OperationSystem(string name, int version)
-        {
-            (this.Name, this.Version) = (name, version);
-        }
-
         public OperationSystem(OperationSystem os)
         {
-            (this.Name, this.Version) = (os.Name, os.Version);
+            (Name, Version) = (os.Name, os.Version);
         }
-
-        public string Name { get; set; }
-        public int Version { get; set; }
     }
 
     [Serializable]
-    public class PhoneSketch : ICloneable
+    public record PhoneSketch
     {
         public PhoneSketch(string modelName, string hardware, OperationSystem operationSystem)
         {
-            (this.ModelName, this.Hardware, this.OS) = (modelName, hardware, operationSystem);
+            (ModelName, Hardware, OS) = (modelName, hardware, operationSystem);
         }
 
-        public PhoneSketch(PhoneSketch duplicatemodel)
+        public PhoneSketch(PhoneSketch duplicate)
         {
-            (this.ModelName, this.Hardware, this.OS) = (duplicatemodel.ModelName, duplicatemodel.Hardware, new OperationSystem(duplicatemodel.OS));
+            (ModelName, Hardware, OS) =
+                (duplicate.ModelName, duplicate.Hardware, new OperationSystem(duplicate.OS));
         }
 
         public string ModelName { get; set; }
@@ -43,34 +36,37 @@ namespace PrototypePattern
 
         public OperationSystem OS { get; set; }
 
-        public void Dump()
+        public override string ToString()
         {
-            Console.WriteLine("\n{0, 20} {1, -10}", "Name: ", this.ModelName);
-            Console.WriteLine("{0, 20} {1,-10}", "Hardware: ", this.Hardware);
-            Console.WriteLine("{0, 20} {1,-10}", "OS name: ", this.OS.Name);
-            Console.WriteLine("{0, 20} {1,-10}", "OS version: ", this.OS.Version);
+            return $"\n{"Name:",20} {ModelName,-10}\n{"Hardware:",20} {Hardware,-10}\n{"OS name:",20} {OS.Name,-10}\n{"OS version:",20} {OS.Version,-10}";
         }
+
 
         public object DeepCopy()
         {
-            object o = null;
-            using (MemoryStream tempStream = new MemoryStream())
-            {
-                BinaryFormatter binFormatter = new BinaryFormatter(null,
-                    new StreamingContext(StreamingContextStates.Clone));
-
-                binFormatter.Serialize(tempStream, this);
-                tempStream.Seek(0, SeekOrigin.Begin);
-
-                o = binFormatter.Deserialize(tempStream);
-            }
-            return o;
+            return this with { };
         }
 
-        public object Clone()
+        // public object DeepCopy()
+        // {
+        //     object o = null;
+        //     using (MemoryStream tempStream = new MemoryStream())
+        //     {
+        //         BinaryFormatter binFormatter = new BinaryFormatter(null,
+        //             new StreamingContext(StreamingContextStates.Clone));
+
+        //         binFormatter.Serialize(tempStream, this);
+        //         tempStream.Seek(0, SeekOrigin.Begin);
+
+        //         o = binFormatter.Deserialize(tempStream);
+        //     }
+        //     return o;
+        // }
+
+        public object CloneIt()
         {
             //return new PhoneSketch(this.ModelName, this.Hardware, new OperationSystem(this.OS));
             return new PhoneSketch(this);
         }
-    }    
+    }
 }

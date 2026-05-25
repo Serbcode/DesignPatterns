@@ -1,3 +1,5 @@
+namespace OptionalObjectsPattern;
+
 public class Option<T> where T : class
 {
     private T? content = null;
